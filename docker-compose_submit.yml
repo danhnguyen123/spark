@@ -1,0 +1,13 @@
+version: '3'
+networks:
+  dathoc-spark-net:
+    external:
+      name: dathoc-spark-net
+services:
+  spark-submit:
+    image: dathoc/spark-submit:latest
+    container_name: spark-submit
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+    networks:
+      - dathoc-spark-net  

@@ -1,0 +1,20 @@
+Step 1: install jdk
+    sudo apt install openjdk-11-jre-headless
+
+Step 2: Download spark tar file
+    wget https://downloads.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop2.7.tgz
+
+Step 3: Untar file
+    tar -zxvf spark-3.1.2-bin-hadoop2.7.tgz
+
+Step 4: Move untar folder to specific directory
+    sudo mv spark-3.1.2-bin-hadoop2.7 /opt/spark
+
+Step 5: Add enviroment variable 
+    vim ~/.bashrc
+        (add to file this line) export SPARK_HOME=/opt/spark
+        (add to file this line) export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+        (add to file this line) export PYSPARK_PYTHON=/usr/bin/python3
+
+Step 6: Run 
+    source  ~/.bashrc
